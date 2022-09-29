@@ -21,12 +21,12 @@ class ArticlesController extends Controller
 
     public function index(Request $request)
     {
-        /*$article=Article::all()->toArray();
-        return array_reverse($article);*/
+        $article=Article::all()->toArray();
+        return array_reverse($article);
         
-        $search = $request->input('search');        
+        /*$search = $request->input('search');
         $articles = Article::query()->where('title', 'LIKE', "%{$search}%")->get();
-        return view('articles.index', compact('articles'));
+        return view('articles.index', compact('articles'));*/
 
         //$articles = Article::paginate(3);
         /*$articles = Article::orderBy('id','desc')->get();
@@ -54,11 +54,11 @@ class ArticlesController extends Controller
             'content' => 'required',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
         ]);
-
         $content['image'] = $imagePath;
-
         auth()->user()->articles()->create($content);
-        return redirect()->route('root')->with('notice', '文章新增成功!');
+        //return redirect()->route('root')->with('notice', '文章新增成功!');
+        return Article::create($content);
+
     }
 
     public function edit($id){
