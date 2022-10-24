@@ -28,8 +28,8 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $article=News::create(request()->only('title', 'content','date','image','type'));
-        return response()->json($article);
+        $new=News::create(request()->only('title', 'content','date','image','type'));
+        return response()->json($new);
     }
 
     /**
@@ -52,7 +52,9 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $new = News::find($id);
+        $new->update($request->all());
+        return response()->json($new);
     }
 
     /**
