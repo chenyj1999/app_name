@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\News;
+use Intervention\Image\Facades\Image;
 
 class NewsController extends Controller
 {
@@ -28,7 +29,10 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $new=News::create(request()->only('title', 'content','date','image','type'));
+        $storagePath = News::put('/public', $request['image']);
+        $fileName = basename($storagePath);
+        $request['image'] = $fileName;
+        $new=News::create($request);
         return response()->json($new);
     }
 
