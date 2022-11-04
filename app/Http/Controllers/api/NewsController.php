@@ -17,8 +17,11 @@ class NewsController extends Controller
      */
     public function index()
     {
+        $headers = array(
+            'Content-Type' => 'application/json; charset=utf-8'
+        );
         $new=News::all();
-        return response()->json($new);
+        return response()->json($new, 200, $headers, JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -29,11 +32,14 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+        $headers = array(
+            'Content-Type' => 'application/json; charset=utf-8'
+        );
         $storagePath = News::put('/public', $request['image']);
         $fileName = basename($storagePath);
         $request['image'] = $fileName;
         $new=News::create($request);
-        return response()->json($new);
+        return response()->json($new, 200, $headers, JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -44,7 +50,10 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        return response()->json(News::find($id));
+        $headers = array(
+            'Content-Type' => 'application/json; charset=utf-8'
+        );
+        return response()->json(News::find($id), 200, $headers, JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -56,9 +65,12 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $headers = array(
+            'Content-Type' => 'application/json; charset=utf-8'
+        );
         $new = News::find($id);
         $new->update($request->all());
-        return response()->json($new);
+        return response()->json($new, 200, $headers, JSON_UNESCAPED_UNICODE);
     }
 
     /**
