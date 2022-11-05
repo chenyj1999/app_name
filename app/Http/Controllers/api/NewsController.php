@@ -29,10 +29,10 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $storagePath = News::put('/public', $request['image']);
+        /*$storagePath = News::put('/public', $request['image']);
         $fileName = basename($storagePath);
-        $request['image'] = $fileName;
-        $new=News::create($request);
+        $request['image'] = $fileName;*/
+        $new=News::create(request()->all());
         return response()->json($new);
     }
 
@@ -45,6 +45,11 @@ class NewsController extends Controller
     public function show($id)
     {
         return response()->json(News::find($id));
+    }
+
+    public function gettype($type)
+    {
+        return response()->json(News::where('type',$type)->get());
     }
 
     /**

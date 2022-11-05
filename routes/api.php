@@ -18,6 +18,7 @@ use App\Http\Controllers\api\NewsController;
 
 Route::get('/',[NewsController::class,'index']);
 Route::get('/{id}',[NewsController::class,'show']);
+Route::get('/type/{id}',[NewsController::class,'gettype']);
 Route::post('/',[NewsController::class,'store']);
 Route::put('/{id}',[NewsController::class,'update']);
 Route::delete('/{id}',[NewsController::class,'destroy']);
