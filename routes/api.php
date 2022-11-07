@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\ArticlesController;
 use App\Http\Controllers\api\NewsController;
+use App\Http\Controllers\api\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,20 +19,20 @@ use App\Http\Controllers\api\NewsController;
 
 Route::group(['middleware' => 'cors'], function () {
     
-    Route::get('/',[NewsController::class,'index']);
-    Route::get('/{id}',[NewsController::class,'show']);
-    Route::post('/',[NewsController::class,'store']);
-    Route::put('/{id}',[NewsController::class,'update']);
-    Route::delete('/{id}',[NewsController::class,'destroy']);
+    Route::get('/news',[NewsController::class,'index']);
+    Route::get('/news/{id}',[NewsController::class,'show']);
+    Route::get('/news/type/{id}',[NewsController::class,'gettype']);
+    Route::post('/news',[NewsController::class,'store']);
+    Route::put('/news/{id}',[NewsController::class,'update']);
+    Route::delete('/news/{id}',[NewsController::class,'destroy']);
     
 });
 
-Route::get('/',[NewsController::class,'index']);
-Route::get('/{id}',[NewsController::class,'show']);
-Route::get('/type/{id}',[NewsController::class,'gettype']);
-Route::post('/',[NewsController::class,'store']);
-Route::put('/{id}',[NewsController::class,'update']);
-Route::delete('/{id}',[NewsController::class,'destroy']);
+Route::get('/event',[EventController::class,'index']);
+Route::get('/event/{id}',[EventController::class,'show']);
+Route::post('/event',[EventController::class,'store']);
+Route::put('/event/{id}',[EventController::class,'update']);
+Route::delete('/event/{id}',[EventController::class,'destroy']);
 
 Route::get('test',[ArticlesController::class,'index']);
 Route::get('test/{id}',[ArticlesController::class,'show']);
