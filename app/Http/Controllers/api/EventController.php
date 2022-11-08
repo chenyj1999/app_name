@@ -38,6 +38,15 @@ class EventController extends Controller
         return response()->json($new);
     }
 
+    public function link(Request $request)
+    {
+        $headers = array(
+            'Content-Type' => 'application/json; charset=utf-8'
+        );
+        $new=Event::create(request()->only('title','image','link'));
+        return response()->json($new);
+    }
+
     /**
      * Display the specified resource.
      *
