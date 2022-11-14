@@ -34,7 +34,21 @@ class EventController extends Controller
         $headers = array(
             'Content-Type' => 'application/json; charset=utf-8'
         );
-        $new=Event::create(request()->all());
+
+        /*$storagePath = Storage::put('/public', $request['image']);
+        $fileName = basename($storagePath);*/
+
+        $content = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'start_date' => 'required',
+            'image' => 'required',
+            "end_date" => 'required',
+            "event_date" => 'required',
+            "link" => 'required',
+        ]);
+
+        $new=Event::create($content);
         return response()->json($new);
     }
 

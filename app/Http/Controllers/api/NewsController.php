@@ -46,8 +46,8 @@ class NewsController extends Controller
             'title' => 'required',
             'content' => 'required',
             'date' => 'required',
-            'type' => 'required',
-            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+            'image' => 'required',
+            'type' => 'required'
         ]);
         $content['image'] = $imagePath;
         $new=News::create($content);
