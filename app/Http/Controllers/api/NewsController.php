@@ -35,11 +35,22 @@ class NewsController extends Controller
         $headers = array(
             'Content-Type' => 'application/json; charset=utf-8'
         );
-        /*$storagePath = News::put('/public', $request['image']);
-        $storagePath = News::put('/public', $request['image']);
-        $fileName = basename($storagePath);
-        $request['image'] = $fileName;*/
-        $new=News::create(request()->all());
+
+        $title=request('title');
+        $imagePath = request('image')->store("uploads/{$title}", 'public');
+
+        /*$storagePath = Storage::put('/public', $request['image']);
+        $fileName = basename($storagePath);*/
+
+        $content = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'date' => 'required',
+            'type' => 'required',
+            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+        ]);
+        $content['image'] = $imagePath;
+        $new=News::create($content);
         return response()->json($new);
     }
 
