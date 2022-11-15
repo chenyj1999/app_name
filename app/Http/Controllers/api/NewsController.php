@@ -35,13 +35,9 @@ class NewsController extends Controller
         $headers = array(
             'Content-Type' => 'application/json; charset=utf-8'
         );
-
-        $title=request('title');
+        
+        /*$title=request('title');
         $imagePath = request('image')->store("uploads/{$title}", 'public');
-
-        /*$storagePath = Storage::put('/public', $request['image']);
-        $fileName = basename($storagePath);*/
-
         $content = $request->validate([
             'title' => 'required',
             'content' => 'required',
@@ -49,8 +45,13 @@ class NewsController extends Controller
             'image' => 'required',
             'type' => 'required'
         ]);
-        $content['image'] = $imagePath;
-        $new=News::create($content);
+        $content['image'] = $imagePath;*/
+        $request = request()->all();
+        $title = $request['title'];
+        $storagePath = Storage::put("/public", $request['image']);
+        $fileName = basename($storagePath);
+        $request['image'] = $fileName;
+        $new=News::create($request);
         return response()->json($new);
     }
 
