@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\ArticlesController;
 use App\Http\Controllers\api\NewsController;
 use App\Http\Controllers\api\EventController;
+use App\Http\Controllers\api\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\api\EventController;
 |
 */
 
+
+
 Route::group(['middleware' => 'cors'], function () {
     
     Route::get('/news',[NewsController::class,'index']);
@@ -27,6 +30,9 @@ Route::group(['middleware' => 'cors'], function () {
     Route::delete('/news/{id}',[NewsController::class,'destroy']);
     
 });
+
+Route::get('/users',[UsersController::class,'index']);
+Route::post('/users',[UsersController::class,'login']);
 
 Route::get('/event',[EventController::class,'index']);
 Route::get('/event/{id}',[EventController::class,'show']);
