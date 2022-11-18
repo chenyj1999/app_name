@@ -23,34 +23,21 @@ class UsersController extends Controller
         return response()->json($users, 200, $headers, JSON_UNESCAPED_UNICODE);
     }
 
-    public function login()
+    public function login(Request $request)
     {
-        $input = Users::all();
-    
-        $rules = ['username'=>'required',
-                  'password'=>'required'
-                  ];
-    
-        $validator = Validator::make($input, $rules);
-    
-        if ($validator->passes()) {
-            $attempt = Auth::attempt([
-                'username' => $input['username'],
-                'password' => $input['password']
-            ]);
-    
-            if ($attempt) {
-                return Redirect::intended('post');
-            }
-    
-            return Redirect::to('login')
-                    ->withErrors(['fail'=>'Email or password is wrong!']);
+
+        $user = request('username');
+        $password = request('password');
+        $content = Users::where('username', '=', $user)
+                  ->where('password', '=', $password)->get();
+        if (sizeof($content) > 0){
+            return 'true';
         }
+        else{
+            return 'false';
+        }
+        
     
-        //fails
-        return Redirect::to('login')
-                    ->withErrors($validator)
-                    ->withInput(Users::except('password'));
     }
     
     /**
