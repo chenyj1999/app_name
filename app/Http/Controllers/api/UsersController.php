@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Users;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -31,13 +32,20 @@ class UsersController extends Controller
         $content = Users::where('username', '=', $user)
                   ->where('password', '=', $password)->get();
         if (sizeof($content) > 0){
+            /*session(['username' => $user]);
+            return session()->all();*/
             return 'true';
         }
         else{
             return 'false';
         }
-        
+    }
     
+    public function logout()
+    {
+
+        session()->forget('username');
+        return session()->all();
     }
     
     /**

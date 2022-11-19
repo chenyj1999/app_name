@@ -32,7 +32,8 @@ Route::group(['middleware' => 'cors'], function () {
 });
 
 Route::get('/users',[UsersController::class,'index']);
-Route::post('/users',[UsersController::class,'login']);
+Route::post('/login',[UsersController::class,'login']);
+Route::get('/logout',[UsersController::class,'logout']);
 
 Route::get('/event',[EventController::class,'index']);
 Route::get('/event/{id}',[EventController::class,'show']);
