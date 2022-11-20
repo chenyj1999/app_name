@@ -38,17 +38,12 @@ class EventController extends Controller
         /*$storagePath = Storage::put('/public', $request['image']);
         $fileName = basename($storagePath);*/
 
-        $content = $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'start_date' => 'required',
-            'image' => 'required',
-            "end_date" => 'required',
-            "event_date" => 'required',
-            "link" => 'required',
-        ]);
-
-        $new=Event::create($content);
+        $request = request()->all();
+        $title = $request['title'];
+        $storagePath = Storage::put("/public/event", $request['image']);
+        $fileName = basename($storagePath);
+        $request['image'] = $fileName;
+        $new=Event::create($request);
         return response()->json($new);
     }
 
