@@ -48,7 +48,7 @@ class NewsController extends Controller
         $content['image'] = $imagePath;*/
         $request = request()->all();
         $title = $request['title'];
-        $storagePath = Storage::put("/public", $request['image']);
+        $storagePath = Storage::put("/public/news", $request['image']);
         $fileName = basename($storagePath);
         $request['image'] = $fileName;
         $new=News::create($request);
