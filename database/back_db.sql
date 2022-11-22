@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3306
--- 產生時間： 2022-11-18 16:22:28
+-- 產生時間： 2022-11-22 18:40:17
 -- 伺服器版本： 8.0.21
 -- PHP 版本： 7.4.9
 
@@ -51,31 +51,35 @@ CREATE TABLE IF NOT EXISTS `articles` (
 DROP TABLE IF EXISTS `events`;
 CREATE TABLE IF NOT EXISTS `events` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `event_date` date DEFAULT NULL,
-  `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL,
+  `host` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `co_organizer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_3` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_4` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `link` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `type` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` date NOT NULL,
   `updated_at` timestamp NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `content`, `start_date`, `end_date`, `event_date`, `image`, `link`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(4, '活動標題', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-08', '2022-11-10', '2022-11-30', 'a.jpg', 'https://getbootstrap.com/docs/4.0/components/navbar/', '2022-11-08 05:27:13', '2022-11-08 05:27:13', NULL),
-(5, '活動標題1109', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-17', '2022-12-02', '2022-12-03', 'S', 'http://127.0.0.1:5173/createevent', '2022-11-08 07:51:39', '2022-11-08 07:51:39', NULL),
-(6, '活動標題1108', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-04', '2022-11-04', '2022-11-08', 'sdf', 'asdf', '2022-11-08 08:15:05', '2022-11-08 08:15:05', NULL),
-(12, 'f', 'f', '2022-11-17', '2022-11-18', '2022-11-18', 'f', 'f', '2022-11-14 10:41:02', '2022-11-14 10:41:02', NULL),
-(11, 'd', 'd', '2022-11-17', '2022-11-25', '2022-11-25', 'd', 'd', '2022-11-14 10:24:46', '2022-11-14 10:24:46', NULL),
-(9, '活動標題(文字)', '徐元智先生紀念基金會df', '2022-12-02', '2022-12-10', '2022-12-10', 's', 'http://127.0.0.1:5173/createevent', '2022-11-08 08:23:24', '2022-11-08 08:24:02', NULL),
-(10, '活動標題(link)', NULL, NULL, NULL, NULL, 's', 'http://127.0.0.1:5173/createevent', '2022-11-08 08:23:47', '2022-11-08 08:23:47', NULL);
+INSERT INTO `events` (`id`, `title`, `content`, `start_date`, `end_date`, `event_date`, `host`, `co_organizer`, `image_1`, `image_2`, `image_3`, `image_4`, `link`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(29, '活動標題(連到外部)', NULL, NULL, NULL, NULL, NULL, NULL, '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:33:45', NULL),
+(28, '活動標題(活動日期已過)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-21', '2022-11-21', '2022-11-26', '徐元智先生紀念基金會', '亞東科大', 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', NULL, NULL, NULL, 'undefined', 'text', '2022-11-13', '2022-11-22 06:31:38', NULL),
+(27, '活動文章標題(活動日期還沒到)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', '2022-11-23', '2022-11-23', '徐元智先生紀念基金會', '亞東科大', 'BvmWBMg6qW3tv6iIznhaloxIhpRyoujyOEn7eO3V.jpg', 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', 'undefined', 'text', '2022-11-22', '2022-11-22 06:30:37', NULL),
+(25, '新增活動標題(外部連結)', NULL, NULL, NULL, NULL, NULL, NULL, 'QKO9aXXpmyDZuo6hlcZUl6SnU4TIxFX5clUGjZNt.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:22:28', NULL),
+(26, '活動日期已過期221120', 'https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/', '2022-11-22', '2022-11-22', '2022-11-08', '徐元智先生紀念基金會', '亞東科大', 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'text', '2022-11-22', '2022-11-22 06:23:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -136,7 +140,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -145,19 +149,16 @@ CREATE TABLE IF NOT EXISTS `news` (
   `created_at` date DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `news`
 --
 
 INSERT INTO `news` (`id`, `title`, `content`, `date`, `image`, `type`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(30, '最新消息0939', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', 'OyJh2yR9o0flQ6pC5ofOchlN0Y5zyoaKQKm0pk43.jpg', 'care', NULL, '2022-11-15', '2022-11-15 05:39:38'),
-(28, '活動標題', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-19', 'epmj72jHZcd3TUAK39TlncdY6ObLeNsHPCMoJ50m.jpg', 'care', NULL, '2022-11-15', '2022-11-15 05:06:37'),
-(26, '活動標題', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-24', 'CygmCFK9x0Ca8jAYYfgSjr3byA7nocHmUc8yvEUU.jpg', 'green', NULL, '2022-11-15', '2022-11-15 05:02:49'),
-(29, '最新消息1115', '元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-24', 'jZn4dMYl6iJFVcFvmLN4WL6C6OzHbZtBYG9NbaG3.jpg', 'build', NULL, '2022-11-15', '2022-11-15 05:32:58'),
-(31, '最新消息0958', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-16', 'gXyixThWm6woI51FAeRm4y8HCy27z3uLJX3O9b0C.jpg', 'care', NULL, '2022-11-15', '2022-11-15 05:58:19'),
-(32, 'kj', 'ghj', '2022-11-25', 'okeDwg5eJU1rY5WQWOMrubVeIMR9I8KPPz0Cwa58.jpg', 'care', NULL, '2022-11-15', '2022-11-15 06:06:35');
+(31, '最新消息0958up', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。up', '2022-11-17', 'CygmCFK9x0Ca8jAYYfgSjr3byA7nocHmUc8yvEUU.jpg', 'care', NULL, '2022-11-15', '2022-11-22 08:35:41'),
+(37, '新增最新消息標題221122', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', 'SelF4ydScexkADBbhX5YXAIDv5ewRZO0xNrZ54uB.jpg', 'green', NULL, '2022-11-22', '2022-11-22 06:20:28'),
+(38, '最新消息標題221028', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', 'krKEJLTVCTuvPWuENKFwh0Ei9paY9r84TgRdFfwM.jpg', 'green', NULL, '2022-11-22', '2022-11-22 06:29:14');
 
 -- --------------------------------------------------------
 
@@ -245,14 +246,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'a', 'a', NULL, '2022-11-17 14:37:46', '2022-11-17 14:37:46');
+(1, 'root', '1234', NULL, '2022-11-17 14:37:46', '2022-11-17 14:37:46'),
+(2, 'b', 'b', NULL, '2022-11-19 16:08:56', '2022-11-19 16:08:56');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
