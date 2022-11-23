@@ -15,17 +15,6 @@ use Intervention\Image\Facades\Image;
 |
 */
 
-
-
-/*
-Route::resource('articles',ArticlesController::class);
-Route::get('/',[ArticlesController::class,'index'])->name('root');
-Route::get('/foundation',[foundationController::class,'index'])->name('foundation');
-
-Route::get('/search',[ArticlesController::class,'search'])->name('search');*/
-
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

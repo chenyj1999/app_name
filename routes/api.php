@@ -42,11 +42,6 @@ Route::post('/event/link',[EventController::class,'link']);
 Route::put('/event/{id}',[EventController::class,'update']);
 Route::delete('/event/{id}',[EventController::class,'destroy']);
 
-Route::get('test',[ArticlesController::class,'index']);
-Route::get('test/{id}',[ArticlesController::class,'show']);
-Route::post('test',[ArticlesController::class,'store']);
-Route::delete('test/{id}',[ArticlesController::class,'destroy']);
-//Route::get('/{id}',[ArticlesController::class,'show']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
