@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3306
--- 產生時間： 2022-11-22 18:40:17
+-- 產生時間： 2022-11-23 15:28:40
 -- 伺服器版本： 8.0.21
 -- PHP 版本： 7.4.9
 
@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `event_date` date DEFAULT NULL,
   `host` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `co_organizer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image_1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image_2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image_3` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
@@ -68,18 +69,18 @@ CREATE TABLE IF NOT EXISTS `events` (
   `updated_at` timestamp NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `content`, `start_date`, `end_date`, `event_date`, `host`, `co_organizer`, `image_1`, `image_2`, `image_3`, `image_4`, `link`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(29, '活動標題(連到外部)', NULL, NULL, NULL, NULL, NULL, NULL, '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:33:45', NULL),
-(28, '活動標題(活動日期已過)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-21', '2022-11-21', '2022-11-26', '徐元智先生紀念基金會', '亞東科大', 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', NULL, NULL, NULL, 'undefined', 'text', '2022-11-13', '2022-11-22 06:31:38', NULL),
-(27, '活動文章標題(活動日期還沒到)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', '2022-11-23', '2022-11-23', '徐元智先生紀念基金會', '亞東科大', 'BvmWBMg6qW3tv6iIznhaloxIhpRyoujyOEn7eO3V.jpg', 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', 'undefined', 'text', '2022-11-22', '2022-11-22 06:30:37', NULL),
-(25, '新增活動標題(外部連結)', NULL, NULL, NULL, NULL, NULL, NULL, 'QKO9aXXpmyDZuo6hlcZUl6SnU4TIxFX5clUGjZNt.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:22:28', NULL),
-(26, '活動日期已過期221120', 'https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/', '2022-11-22', '2022-11-22', '2022-11-08', '徐元智先生紀念基金會', '亞東科大', 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'text', '2022-11-22', '2022-11-22 06:23:55', NULL);
+INSERT INTO `events` (`id`, `title`, `content`, `start_date`, `end_date`, `event_date`, `host`, `co_organizer`, `address`, `image_1`, `image_2`, `image_3`, `image_4`, `link`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(29, '活動標題(連到外部)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:33:45', NULL),
+(28, '活動標題(活動日期已過)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-21', '2022-11-21', '2022-11-26', '徐元智先生紀念基金會', '亞東科大', NULL, 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', NULL, NULL, NULL, 'undefined', 'text', '2022-11-13', '2022-11-22 06:31:38', NULL),
+(27, '活動文章標題(活動日期還沒到)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', '2022-11-23', '2022-11-23', '徐元智先生紀念基金會', '亞東科大', NULL, 'BvmWBMg6qW3tv6iIznhaloxIhpRyoujyOEn7eO3V.jpg', 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', 'undefined', 'text', '2022-11-22', '2022-11-22 06:30:37', NULL),
+(25, '新增活動標題(外部連結)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'QKO9aXXpmyDZuo6hlcZUl6SnU4TIxFX5clUGjZNt.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:22:28', NULL),
+(26, '活動日期已過期221120', 'https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/', '2022-11-22', '2022-11-22', '2022-11-08', '徐元智先生紀念基金會', '亞東科大', NULL, 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'text', '2022-11-22', '2022-11-22 06:23:55', NULL);
 
 -- --------------------------------------------------------
 

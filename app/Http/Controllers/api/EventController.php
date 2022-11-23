@@ -40,14 +40,23 @@ class EventController extends Controller
 
         $request = request()->all();
         $title = $request['title'];
-        $storagePath_1 = Storage::put("/public/event/test", $request['image_1']);
-        $request['image_1'] = basename($storagePath_1);
-        $storagePath_2 = Storage::put("/public/event/test", $request['image_2']);
-        $request['image_2'] = basename($storagePath_2);
-        $storagePath_3 = Storage::put("/public/event/test", $request['image_3']);
-        $request['image_3'] = basename($storagePath_3);
-        $storagePath_4 = Storage::put("/public/event/test", $request['image_4']);
-        $request['image_4'] = basename($storagePath_4);
+        if (request('image_1') != ''){
+            $storagePath_1 = Storage::put("/public/event", $request['image_1']);
+            $request['image_1'] = basename($storagePath_1);
+        }
+        if (request('image_2') != ''){
+            $storagePath_2 = Storage::put("/public/event", $request['image_2']);
+            $request['image_2'] = basename($storagePath_2);
+        }
+        if (request('image_3') != ''){
+            $storagePath_3 = Storage::put("/public/event", $request['image_3']);
+            $request['image_3'] = basename($storagePath_3);
+        }
+        if (request('image_4') != ''){
+            $storagePath_4 = Storage::put("/public/event", $request['image_4']);
+            $request['image_4'] = basename($storagePath_4);
+        }
+        
         $new=Event::create($request);
         return response()->json($new);
     }
