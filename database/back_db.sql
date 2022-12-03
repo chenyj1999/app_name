@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1:3306
--- 產生時間： 2022-11-23 15:28:40
+-- 產生時間： 2022-12-03 03:39:13
 -- 伺服器版本： 8.0.21
 -- PHP 版本： 7.4.9
 
@@ -63,24 +63,21 @@ CREATE TABLE IF NOT EXISTS `events` (
   `image_2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image_3` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image_4` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `editordata` text COLLATE utf8mb4_unicode_ci,
   `link` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `type` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` date NOT NULL,
   `updated_at` timestamp NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `content`, `start_date`, `end_date`, `event_date`, `host`, `co_organizer`, `address`, `image_1`, `image_2`, `image_3`, `image_4`, `link`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(29, '活動標題(連到外部)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:33:45', NULL),
-(28, '活動標題(活動日期已過)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-21', '2022-11-21', '2022-11-26', '徐元智先生紀念基金會', '亞東科大', NULL, 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', NULL, NULL, NULL, 'undefined', 'text', '2022-11-13', '2022-11-22 06:31:38', NULL),
-(27, '活動文章標題(活動日期還沒到)', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', '2022-11-23', '2022-11-23', '徐元智先生紀念基金會', '亞東科大', NULL, 'BvmWBMg6qW3tv6iIznhaloxIhpRyoujyOEn7eO3V.jpg', 'kAac2tToZGtMj4654EsPg8jO67U7hd4K4gEg6czv.jpg', '3isCCx64UjfShd0uIOP0YSNq6HmGlPegFnTe6iKl.png', 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', 'undefined', 'text', '2022-11-22', '2022-11-22 06:30:37', NULL),
-(25, '新增活動標題(外部連結)', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'QKO9aXXpmyDZuo6hlcZUl6SnU4TIxFX5clUGjZNt.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'link', '2022-11-22', '2022-11-22 06:22:28', NULL),
-(26, '活動日期已過期221120', 'https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/https://femf.feg.com.tw/feada/', '2022-11-22', '2022-11-22', '2022-11-08', '徐元智先生紀念基金會', '亞東科大', NULL, 'WbiQZXk3EZ81jpBfo188G9r4UbXQckIDfpHzyECn.jpg', NULL, NULL, NULL, 'https://femf.feg.com.tw/feada/', 'text', '2022-11-22', '2022-11-22 06:23:55', NULL);
+INSERT INTO `events` (`id`, `title`, `content`, `start_date`, `end_date`, `event_date`, `host`, `co_organizer`, `address`, `image_1`, `image_2`, `image_3`, `image_4`, `editordata`, `link`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(101, '護眼EYECARE', '事業有成後徐有庠先生本著「取諸社會、用諸社會」精神，投身公益。1976年成立徐元智先生紀念基金會。徐元智先生紀念基金會創立40餘年來，曾歷經石油危機和地區性戰爭，但其捐助會務卻未曾受影響，各項工作成果也獲得各界讚賞。\r\n\r\n事業有成後徐有庠先生本著「取諸社會、用諸社會」精神，投身公益。1976年成立徐元智先生紀念基金會。徐元智先生紀念基金會創立40餘年來，曾歷經石油危機和地區性戰爭，但其捐助會務卻未曾受影響，各項工作成果也獲得各界讚賞。 事業有成後徐有庠先生本著「取諸社會、用諸社會」精神，投身公益。1976年成立徐元智先生紀念基金會。徐元智先生紀念基金會創立40餘年來，曾歷經石油危機和地區性戰爭，但其捐助會務卻未曾受影響，各項工作成果也獲得各界讚賞。 事業有成後徐有庠先生本著「取諸社會、用諸社會」精神，投身公益。1976年成立徐元智先生紀念基金會。徐元智先生紀念基金會創立40餘年來，曾歷經石油危機和地區性戰爭，但其捐助會務卻未曾受影響，各項工作成果也獲得各界讚賞。 事業有成後徐有庠先生本著「取諸社會、用諸社會」精神，投身公益。1976年成立徐元智先生紀念基金會。徐元智先生紀念基金會創立40餘年來，曾歷經石油危機和地區性戰爭，但其捐助會務卻未曾受影響，各項工作成果也獲得各界讚賞。事業有成後徐有庠先生本著「取諸社會、用諸社會」精神，投身公益。1976年成立徐元智先生紀念基金會。徐元智先生紀念基金會創立40餘年來，曾歷經石油危機和地區性戰爭，但其捐助會務卻未曾受影響，各項工作成果也獲得各界讚賞。 事業有成後徐有庠先生本著', '2022-08-01', '2022-08-31', '2022-09-07', '徐元智先生紀念基金會', '國立陽明交通大學　亞東科技大學', '亞東科技大學', 'ELTAy9ZVODO2DGVR0asbpPG7UBhKodMshbzc1sNt.jpg', '7v5VEBn91zWxsWeeC9kflKX3U3XlhI9wM5mYvsqO.jpg', 'AWcT4SlBHYzM1r8525Uayd862X5WG7MY5vfOJQ2x.jpg', 'oriyzfruXiHi8Zlovj49ww7an5EvzHeajg3kbnGG.jpg', '<h2 style=\"margin-left:auto;text-align:center;\"><strong>活動期程</strong></h2><figure class=\"table\" style=\"width:100%;\"><table class=\"ck-table-resized\"><colgroup><col style=\"width:49.65%;\"><col style=\"width:50.35%;\"></colgroup><tbody><tr><td rowspan=\"2\"><p style=\"text-align:center;\"><span class=\"text-big\"><strong>8/6(六)</strong></span></p></td><td style=\"width:166.625px;\"><p style=\"margin-left:0px;text-align:center;\"><span class=\"text-small\" style=\"color:hsl(0, 0%, 0%);\">09:30-12:00</span></p></td></tr><tr><td><p style=\"text-align:center;\"><span class=\"text-small\" style=\"color:hsl(0, 0%, 0%);\">14:00-16:30</span></p></td></tr><tr><td rowspan=\"2\"><p style=\"text-align:center;\"><span class=\"text-big\"><strong>8/7(六)</strong></span></p></td><td><p style=\"text-align:center;\"><span class=\"text-small\" style=\"color:hsl(0, 0%, 0%);\">09:30-12:00</span></p></td></tr><tr><td style=\"width:166.625px;\"><p style=\"margin-left:0px;text-align:center;\"><span class=\"text-small\" style=\"color:hsl(0,0%,0%);\">14:00-16:30</span></p></td></tr><tr><td rowspan=\"2\"><p style=\"text-align:center;\"><span class=\"text-big\"><strong>8/20(六)</strong></span></p></td><td><p style=\"text-align:center;\"><span class=\"text-small\" style=\"color:hsl(0, 0%, 0%);\">09:30-12:00</span></p></td></tr><tr><td style=\"width:166.625px;\"><p style=\"margin-left:0px;text-align:center;\"><span class=\"text-small\" style=\"color:hsl(0, 0%, 0%);\">14:00-16:30</span></p></td></tr></tbody></table></figure>', 'https://femf.kktix.cc/events/20220924monuments', 'text', '2022-12-02', '2022-12-02 05:25:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -147,19 +144,21 @@ CREATE TABLE IF NOT EXISTS `news` (
   `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `created_at` date DEFAULT NULL,
+  `created_at` date NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `news`
 --
 
 INSERT INTO `news` (`id`, `title`, `content`, `date`, `image`, `type`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(31, '最新消息0958up', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。up', '2022-11-17', 'CygmCFK9x0Ca8jAYYfgSjr3byA7nocHmUc8yvEUU.jpg', 'care', NULL, '2022-11-15', '2022-11-22 08:35:41'),
-(37, '新增最新消息標題221122', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', 'SelF4ydScexkADBbhX5YXAIDv5ewRZO0xNrZ54uB.jpg', 'green', NULL, '2022-11-22', '2022-11-22 06:20:28'),
-(38, '最新消息標題221028', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-11-23', 'krKEJLTVCTuvPWuENKFwh0Ei9paY9r84TgRdFfwM.jpg', 'green', NULL, '2022-11-22', '2022-11-22 06:29:14');
+(44, '遠東建築獎', '提昇社會建築意識，關懷本土，放眼全球。\r\n提昇社會建築意識，關懷本土，放眼全球。\r\n提昇社會建築意識，關懷本土，放眼全球。\r\n提昇社會建築意識，關懷本土，放眼全球。\r\n提昇社會建築意識，關懷本土，放眼全球。\r\n提昇社會建築意識，關懷本土，放眼全球。', '2022-11-09', 'vFLF0hhAd29kPbwSHvKqB09m9kOIOI6zyeLCstBY.jpg', 'build', NULL, '2022-12-02', '2022-12-02 05:14:46'),
+(43, '兒童護眼彩繪活動', '展現台灣之人文風情與環境建築之美，也增加小學生及家長到戶外作畫以及欣賞景物的時間，使眼睛能放鬆以達護眼保健之成效。\r\n\r\n展現台灣之人文風情與環境建築之美，也增加小學生及家長到戶外作畫以及欣賞景物的時間，使眼睛能放鬆以達護眼保健之成效。', '2022-10-03', 'emhp6lIhhT2Vw5L25JI3lO2FddfiMihD7KxtHsdt.jpg', 'care', NULL, '2022-12-02', '2022-12-02 05:13:40'),
+(42, '活動標題', '事業有成後徐有庠先生本著「取諸社會、用諸社會」精神，投身公益。1976年成立徐元智先生紀念基金會。徐元智先生紀念基金會創立40餘年來，曾歷經石油危機和地區性戰爭，但其捐助會務卻未曾受影響，各項工作成果也獲得各界讚賞。\r\n\r\n在眾多捐助案件中，對我國工商與科技發展影響最深遠的。 關懷面向多元，40年來，徐元智先生紀念基金會共核定資助計逾2,000項，獎助支出近新台幣40億元，均由基金孽息撥付，公益服務範疇廣含藝文公益活動、科技、政經、人文之國際學術研討、學校輔助及學術研究、獎助學金、兒童及成人社會教育、醫學教育研究、體育等項目。', '2022-08-31', 'x3QGMYY7iMwZTXa7zVb6qyCyexFNbH1D0xKWOKgL.jpg', 'green', NULL, '2022-12-02', '2022-12-02 05:12:17'),
+(45, '護眼EYECARE', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-12-16', 'wTXROg6bQKXr8jyugkX5T50tn6DDARUBrNc2rDU4.jpg', 'green', NULL, '2022-12-02', '2022-12-02 05:15:12'),
+(46, '亞泥生態園區', '徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。\r\n徐元智先生紀念基金會希望透過對於文教將藝術種子散播於各個角落，打造一個真善美的社會。', '2022-12-15', 'TJqkAg58bZ5VXYUXrowdirK5jM2ozXydDEbQOp1g.jpg', 'care', NULL, '2022-12-02', '2022-12-02 05:15:42');
 
 -- --------------------------------------------------------
 
@@ -254,8 +253,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'root', '1234', NULL, '2022-11-17 14:37:46', '2022-11-17 14:37:46'),
-(2, 'b', 'b', NULL, '2022-11-19 16:08:56', '2022-11-19 16:08:56');
+(1, 'root', '1234', NULL, '2022-11-17 14:37:46', '2022-11-17 14:37:46');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
